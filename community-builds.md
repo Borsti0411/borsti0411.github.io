@@ -1,0 +1,114 @@
+---
+layout: default
+title: Community Builds
+permalink: /community-builds/
+---
+
+# Community Builds
+
+Neben dem offiziellen MeshCore-Projekt entstehen in der Bremer Mesh-Community eigene **Hardware-Designs, 3D-Modelle, Firmware-Anpassungen, Apps und Software-Tools**. Hier stellen wir euch diese Projekte vor.
+
+<hr>
+
+## Website
+
+### hbme.sh – BreMesh Community-Seite
+
+Diese Website! Eine statische **GitHub Pages**-Seite mit allen Infos rund um das BreMesh-Netz – Schnellstart, Hardware-Anleitungen, Community Builds und News.  
+Open Source und offen für Beiträge: Jeder kann per Pull Request Inhalte ergänzen oder verbessern.
+
+- **Website:** [hbme.sh](https://hbme.sh)
+- **Repository:** [github.com/NordCen/BreMeshPeople](https://github.com/NordCen/BreMeshPeople)
+- **Typ:** Website (Jekyll / GitHub Pages)
+- **Betrieben von:** NordCen
+
+<hr>
+
+
+## Firmware
+
+### BreMesh Firmware
+
+Ein Fork der offiziellen MeshCore-Firmware, speziell angepasst für die RePeter-Hardware und das BreMesh-Netz. Enthält vorkonfigurierte Frequenzen für die 868-MHz-Region, aktiviertes powersaving, ein eigenes Boot-Logo und fertige Release-Binaries über GitHub Actions, sodass kein eigenes Kompilieren nötig ist. Unterstützt ProMicro nRF52840 Boards.
+
+- **Projekt:** [RePeter-Firmware](https://github.com/timniklas/RePeter-Firmware)
+- **Typ:** Firmware (MeshCore-Fork)
+- **Autor:** Nagios
+
+<hr>
+
+## Apps
+
+### BreMesh App (iOS & Android)
+
+Die **BreMesh App** ist eine von Nagios entwickelte Companion-App für iOS und Android.  
+Sie zeigt hauptsächlich eine Karte mit den Repeatern und Verbindungen im BreMesh-Netz. Darüber hinaus hat man Zugriff auf den Chat und sieht, welche Repeater, Clients und Roomserver aktuell verfügbar sind.
+
+- **Website:** [bremesh.de](https://bremesh.de)
+- **Download:** [App Store (iOS)](https://apps.apple.com/de/app/bremesh/id6757368075) · [Play Store (Android)](https://play.google.com/store/apps/details?id=de.bremesh.app)
+- **Autor:** Nagios
+
+<hr>
+
+
+## Hardware
+
+### RePeter – BreMesh MeshCore Repeater
+
+Ein offenes Hardware-Design für einen kompakten MeshCore-Repeater auf Basis des nRF52840 ProMicro und SX1262 LoRa-Chip (Ra-01SH-P oder HT-RA62). Der RePeter verbraucht nur ca. 0.4 Wh/Tag unterstützt 1–3× 18650-Akkus mit BMS sowie Solarbetrieb über USB-C und ist ab ca. 45 € nachzubauen. PCB, Gehäuse (IP66), Antenna-Bracket und ein eigenes ChargeBoard sind im Projekt enthalten – dazu optionale Erweiterungen wie OLED-Display, RTC und Temperatur-/Wettersensoren.
+
+- **Projekt:** [MeshCoreRepeater-RePeter](https://github.com/robrec/MeshCoreRepeater-RePeter)
+- **Typ:** Hardware-Design (PCB / Gehäuse / Zubehör)
+- **Autor:** Bartzi
+
+### FakeTec – DIY LoRa-Boards
+
+Das [FakeTec](/faketec/) ist ein Open-Source-PCB im Heltec-V3-Formfaktor auf Basis des ProMicro nRF52840 – günstig (~15 €), selbst lötbar und kompatibel mit MeshCore und Meshtastic.  
+In der BreMesh-Community sind aktuell vor allem **V4** (mit MOSFETs für GPS, Buzzer & LED) und **V5** (mit Batterieschutz und JST-Stecker) verbreitet.
+
+Wer Interesse hat: **Frag einfach in unseren [Kommunikationskanälen](/community/)** – einige Community-Mitglieder haben fertige Boards und helfen gerne beim Einstieg.
+
+- **Infos & Bauanleitung:** [FakeTec-Seite](/faketec/)
+- **Repository:** [github.com/gargomoma/fakeTec_pcb](https://github.com/gargomoma/fakeTec_pcb)
+- **Typ:** Hardware-Design (Open-Source-PCB)
+- **Community-Autoren:** gargomoma, lupusworax, ShimonHoranek
+
+<hr>
+
+
+## Software
+
+### BreMesh MeshCore Bot
+
+Ein erweiterter Fork des [meshcore-bot](https://github.com/agessaman/meshcore-bot) von agessaman, angepasst für das BreMesh-Netz. Der Bot verbindet das Mesh-Netzwerk mit der BreMesh-Infrastruktur und bietet eine MQTT-Bridge sowie die Anbindung an die **api.hbme.sh**.
+
+**Features:**
+
+- **API-Anbindung:** Übermittelt empfangene Pakete an api.hbme.sh zur Auswertung auf der Website
+- **Telemetrie & Akkustand:** Akkustand und Telemetriedaten eigener Repeater via Web oder MQTT abrufbar
+- **MQTT-Bridge:** Entschlüsselte Mesh-Pakete werden per MQTT ausgeliefert – und über MQTT können auch Nachrichten ins Mesh gesendet werden
+
+- **Projekt:** [bremesh-meshcore-bot](https://github.com/robrec/bremesh-meshcore-bot)
+- **Basiert auf:** [meshcore-bot](https://github.com/agessaman/meshcore-bot) von agessaman
+- **Typ:** Software (Python / MQTT / MeshCore)
+- **Autor:** Bartzi
+
+<hr>
+
+
+## Infrastruktur
+
+### Matrix-Server
+
+Für die Kommunikation außerhalb des Mesh betreibt die BreMesh-Community einen eigenen **Matrix-Server** unter [mtrx.hbme.sh](https://mtrx.hbme.sh/). Matrix ist ein offenes, dezentrales Chat-Protokoll mit **Ende-zu-Ende-Verschlüsselung** – mehr dazu auf unserer [Matrix-Seite](/matrix/).
+
+Unser Server ist **Invite-only**. Da Matrix aber föderiert funktioniert, kannst du unserem Space auch mit einem Account auf einem öffentlichen Server beitreten – zum Beispiel [matrix.org](https://matrix.org). Melde dich einfach im Mesh, im [Matrix-Space](/matrix/) oder in der [Telegram-Gruppe](https://t.me/meshhbuz), um einen Invite zu bekommen.
+
+- **Matrix-WebApp:** [mtrx.hbme.sh](https://mtrx.hbme.sh/)
+- **Account-Registrierung:** Auf Einladung
+- **Administriert von:** bjo & Bartzi
+
+<hr>
+
+
+> **Tipp:** Kleine Änderungen (Tippfehler, neue Links) kannst du direkt über die GitHub-Weboberfläche machen – kein lokales Git nötig.

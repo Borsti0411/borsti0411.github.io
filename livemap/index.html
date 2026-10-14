@@ -1,0 +1,74 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live Map – BreMesh</title>
+  <meta name="description" content="Live-Karte des BreMesh MeshCore-Netzwerks – Repeater, Paket-Routen und Signal-Daten in Echtzeit." />
+  <link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+  <meta property="og:title" content="BreMesh Live Map">
+  <meta property="og:description" content="Live-Karte des BreMesh MeshCore-Netzwerks in Bremen und Umgebung.">
+  <meta property="og:image" content="/assets/img/hero.png">
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="livemap.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="/" aria-label="BreMesh Startseite">
+        <img src="/assets/img/logo.png" alt="BreMesh Logo" class="logo" />
+        <span class="brand-text">BreMesh</span>
+      </a>
+      <nav class="nav">
+        <a href="/moin/">Schnellstart</a>
+        <a href="/umstieg/">Umstieg</a>
+        <a href="/community/">Community</a>
+        <a href="/livemap/" class="active">Live Map</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="livemap-main">
+    <!-- Map (full-width, dark themed like BIA dashboard) -->
+    <div class="map-wrap">
+      <div class="map-toolbar">
+        <div class="map-toolbar-left">
+          <span class="live-dot" id="liveDot"></span>
+          <span class="map-toolbar-title">📡 Live Network Map</span>
+          <span class="ws-status" id="feedStatus">Verbinde…</span>
+        </div>
+        <div class="map-toolbar-right">
+          <span id="mapRouteInfo" class="map-route-label">Warte auf Paket…</span>
+        </div>
+      </div>
+      <div class="map-container">
+        <div id="routeMap" class="route-map"></div>
+        <!-- Activity feed overlay inside map -->
+        <div class="activity-overlay" id="activityOverlay">
+          <div class="activity-header">
+            <span class="activity-title">Letzte Aktivität</span>
+            <span class="activity-count" id="feedCount">0</span>
+            <span class="ws-clients" id="wsClients" title="Verbundene Zuschauer"><span class="ws-clients-dot"></span><span id="wsClientCount">–</span></span>
+          </div>
+          <div class="activity-list" id="feedScroll"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer" style="padding:6px 0; margin:0;">
+    <div class="footer-inner" style="justify-content:center; padding:0; margin:0;">
+      <a href="/datenschutz/">Datenschutz</a>
+    </div>
+  </footer>
+
+  <script src="livemap.js"></script>
+</body>
+</html>

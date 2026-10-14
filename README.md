@@ -1,1 +1,6 @@
-# borsti0411.github.io
+# Lokal testen (optional)
+Voraussetzung: Ruby + Bundler
+
+```bash
+bundle install
+bundle exec jekyll serve

@@ -1,0 +1,9 @@
+title: BreMesh
+description: Freies MeshCore-Netzwerk für Bremen und Umgebung
+markdown: kramdown
+kramdown:
+  input: GFM
+permalink: pretty
+
+include:
+  - .well-known
